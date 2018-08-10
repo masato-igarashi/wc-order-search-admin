@@ -144,6 +144,8 @@ class Orders_Index extends Index implements RecordsProvider {
 					'number',
 					'items.sku',
 					'billing.phone',
+                    // edited
+                    'billing.email',
 				),
 				'customRanking'                    => array(
 					'desc(date_timestamp)',
@@ -241,7 +243,8 @@ class Orders_Index extends Index implements RecordsProvider {
 		if ( $user ) {
 			$record['customer'] = array(
 				'id'           => (int) $user->ID,
-				'display_name' => $user->first_name . ' ' . $user->last_name,
+                // edited
+				'display_name' => $user->last_name . ' ' . $user->first_name,
 				'email'        => $user->user_email,
 			);
 		}
